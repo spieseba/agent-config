@@ -17,8 +17,8 @@ Clone the repo, then symlink (or copy) into your Claude Code config directory:
 
 ```bash
 git clone <this-repo> ~/code/claude-config
-ln -s ~/code/claude-config/CLAUDE.md ~/.claude/CLAUDE.md
-ln -s ~/code/claude-config/skills ~/.claude/skills
+ln -s ~/Projects/agent-config/CLAUDE.md ~/.claude/CLAUDE.md
+ln -s ~/Projects/agent-config/skills ~/.claude/skills
 ```
 
 Symlinks are preferred so updates pulled into the repo are picked up immediately. Use `cp -r` instead if your setup requires real files.
