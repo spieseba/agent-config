@@ -9,14 +9,14 @@ Collaboration-first, not autonomy-first. The goal is to amplify my thinking, not
 ## Acknowledgements
 
 - `CLAUDE.md` is copied from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills), itself derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
-- Several skills are derived from [mattpocock/skills](https://github.com/mattpocock/skills) — copied verbatim or adapted, as noted below.
+- `grill-me` and `write-a-skill` skills are derived from [mattpocock/skills](https://github.com/mattpocock/skills) — copied verbatim or adapted, as noted below.
 
 ## Install
 
 Clone the repo, then symlink (or copy) into your Claude Code config directory:
 
 ```bash
-git clone <this-repo> ~/code/claude-config
+git clone <this-repo> ~/code/agent-config
 ln -s ~/Projects/agent-config/CLAUDE.md ~/.claude/CLAUDE.md
 ln -s ~/Projects/agent-config/skills ~/.claude/skills
 ```
@@ -29,19 +29,16 @@ Always-on behavioral guidelines applied to every session. Four principles: *Thin
 
 ## Skills
 
+### Personal skills
+
+*Skills authored from scratch will go here once written.*
+
+### External skills
+
 The following skills are copied or adapted from [mattpocock/skills](https://github.com/mattpocock/skills) @ `b843cb5` on 2026-04-30. Adaptations, where present, are noted on the skill.
 
-- **`caveman`** — Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler while keeping full technical accuracy.
 - **`grill-me`** — Get relentlessly interviewed about a plan or design until every branch of the decision tree is resolved.
-- **`grill-with-docs`** — Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates `CONTEXT.md` and `docs/adr/` inline.
 - **`write-a-skill`** — Create new skills with proper structure, progressive disclosure, and bundled resources.
-- **`zoom-out`** — Tell the agent to zoom out and give broader context or a higher-level perspective on an unfamiliar section of code.
-
-### To be adapted
-
-- **`diagnose`** — Disciplined diagnosis loop for hard bugs and performance regressions: reproduce → minimise → hypothesise → instrument → fix → regression-test. *TODO: rewrite Phase 1 example list for numerical/HPC work (synthetic-truth tests, differential loops, saved-array replay, bisection over data versions).*
-- **`improve-codebase-architecture`** — Find deepening opportunities in a codebase, informed by `CONTEXT.md` and `docs/adr/`. *TODO: reframe around analysis-code anti-patterns (implicit array-shape contracts, missing units, duplicated estimators across subdirs, hardcoded constants).*
-- **`tdd`** — Test-driven development with a red-green-refactor loop. *TODO: stash; likely merge with a future `numerical-correctness` skill focused on synthetic-truth tests for numerical functions.*
 
 ### Skill usage in practice
 
@@ -53,24 +50,6 @@ The following skills are copied or adapted from [mattpocock/skills](https://gith
         - Explore the codebase first, then grill.
         - Grill isn't one-shot. When you've been grilled and you're now coding, you'll hit a fork that wasn't covered. Re-invoke.
         - Grill is also good for designing experiments, not just code. Example: "I want to test whether method A vs B affects the extracted mass. /grill-me."
-- `grill-with-docs`
-    - While `grill-me` is conversational, `grill-with-docs` is `grill-me` plus two persistent artifacts:
-        - `CONTEXT.md`: glossary of domain-specific language.
-        - `docs/adr/`: architectural/methodological decision log. Each session feeds the next because artifacts persist.
-    - Compounding value exists in future sessions as the agent reads `CONTEXT.md` and ADRs. Code is written using your vocabulary, and the agent surfaces ambiguity — including contradictions between current statements and what's already in `CONTEXT.md` or the code.
-    - Note: don't put implementation details in `CONTEXT.md` — it's a glossary of domain terms, not a tech overview.
 - `write-a-skill`
     - Read/remember sub-files of the skill to remember how skills work.
 
-## Personal skills
-
-*Skills authored from scratch will go here once written.*
-
-## Updating from upstream
-
-When pulling in changes from a source repo:
-
-1. Diff the upstream skill against the local copy to see what changed.
-2. For unmodified skills, copy the new version over and update the commit hash and date in the relevant section above.
-3. For adapted skills, review upstream changes manually — decide which to merge into the local adaptation.
-4. Bump the hash and date even when no change is needed for the session, so "as of" stays accurate.
