@@ -4,7 +4,7 @@ Personal collection of [Claude Code](https://docs.claude.com/en/docs/claude-code
 
 ## Why these skills
 
-Collaboration-first, not autonomy-first. The goal is to amplify my thinking, not replace it — I do the thinking about *what* to do, the agent accelerates the *how*. `CLAUDE.md` provides always-on behavioral guardrails; the skills provide on-demand workflows for specific situations (planning, debugging, zooming out).
+Collaboration-first, not autonomy-first. The goal is to amplify my thinking, not replace it — I do the thinking about *what* to do, the agent accelerates the *how*. `CLAUDE.md` provides always-on behavioral guardrails; the skills provide on-demand workflows for specific situations.
 
 ## Acknowledgements
 
@@ -16,7 +16,7 @@ Collaboration-first, not autonomy-first. The goal is to amplify my thinking, not
 Clone the repo, then symlink (or copy) into your Claude Code config directory:
 
 ```bash
-git clone <this-repo> ~/code/agent-config
+git clone <this-repo> ~/Projects/agent-config
 ln -s ~/Projects/agent-config/CLAUDE.md ~/.claude/CLAUDE.md
 ln -s ~/Projects/agent-config/skills ~/.claude/skills
 ```
@@ -25,7 +25,7 @@ Symlinks are preferred so updates pulled into the repo are picked up immediately
 
 ## `CLAUDE.md`
 
-Always-on behavioral guidelines applied to every session. Four principles: *Think Before Coding*, *Simplicity First*, *Surgical Changes*, *Goal-Driven Execution*. Copied verbatim from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) @ `2c60614` on 2026-05-03.
+Always-on behavioral guidelines applied to every session. Four principles: *Think Before Coding*, *Simplicity First*, *Surgical Changes*, *Goal-Driven Execution*. Copied verbatim from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) @ `2c60614`.
 
 ## Skills
 
@@ -35,10 +35,8 @@ Always-on behavioral guidelines applied to every session. Four principles: *Thin
 
 ### External skills
 
-The following skills are copied or adapted from [mattpocock/skills](https://github.com/mattpocock/skills) @ `b843cb5` on 2026-04-30. Adaptations, where present, are noted on the skill.
-
-- **`grill-me`** — Get relentlessly interviewed about a plan or design until every branch of the decision tree is resolved.
-- **`write-a-skill`** — Create new skills with proper structure, progressive disclosure, and bundled resources.
+- **`grill-me`** — Get relentlessly interviewed about a plan or design until every branch of the decision tree is resolved. Copied from [mattpocock/skills](https://github.com/mattpocock/skills) @ `b843cb5`.
+- **`write-a-skill`** — Create new skills with proper structure, progressive disclosure, and bundled resources. Copied from [mattpocock/skills](https://github.com/mattpocock/skills) @ `b843cb5`.
 
 ### Skill usage in practice
 
