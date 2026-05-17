@@ -6,11 +6,6 @@ Personal collection of [Claude Code](https://docs.claude.com/en/docs/claude-code
 
 Collaboration-first, not autonomy-first. The goal is to amplify my thinking, not replace it — I do the thinking about *what* to do, the agent accelerates the *how*. `CLAUDE.md` provides always-on behavioral guardrails; the skills provide on-demand workflows for specific situations.
 
-## Acknowledgements
-
-- `CLAUDE.md` is copied from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills), itself derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
-- `grill-me` and `write-a-skill` skills are derived from [mattpocock/skills](https://github.com/mattpocock/skills) — copied verbatim or adapted, as noted below.
-
 ## Install
 
 Clone the repo, then symlink (or copy) into your Claude Code config directory:
@@ -25,7 +20,7 @@ Symlinks are preferred so updates pulled into the repo are picked up immediately
 
 ## `CLAUDE.md`
 
-Always-on behavioral guidelines applied to every session. Four principles: *Think Before Coding*, *Simplicity First*, *Surgical Changes*, *Goal-Driven Execution*. Copied verbatim from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) @ `2c60614`.
+Always-on behavioral guidelines applied to every session. Four principles: *Think Before Coding*, *Simplicity First*, *Surgical Changes*, *Goal-Driven Execution*. Copied verbatim from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) @ `2c60614`, itself derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
 
 ## Skills
 
@@ -36,7 +31,6 @@ Always-on behavioral guidelines applied to every session. Four principles: *Thin
 ### External skills
 
 - **`grill-me`** — Get relentlessly interviewed about a plan or design until every branch of the decision tree is resolved. Copied from [mattpocock/skills](https://github.com/mattpocock/skills) @ `b843cb5`.
-- **`write-a-skill`** — Create new skills with proper structure, progressive disclosure, and bundled resources. Copied from [mattpocock/skills](https://github.com/mattpocock/skills) @ `b843cb5`.
 
 ### Skill usage in practice
 
@@ -48,6 +42,4 @@ Always-on behavioral guidelines applied to every session. Four principles: *Thin
         - Explore the codebase first, then grill.
         - Grill isn't one-shot. When you've been grilled and you're now coding, you'll hit a fork that wasn't covered. Re-invoke.
         - Grill is also good for designing experiments, not just code. Example: "I want to test whether method A vs B affects the extracted mass. /grill-me."
-- `write-a-skill`
-    - Read/remember sub-files of the skill to remember how skills work.
 
