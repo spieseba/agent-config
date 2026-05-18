@@ -24,22 +24,15 @@ Always-on behavioral guidelines applied to every session. Four principles: *Thin
 
 ## Skills
 
-### Personal skills
+- **`grill-me`** — Get relentlessly interviewed about a plan or design until every branch of the decision tree is resolved. This skill is inspired by [mattpocock/skills](https://github.com/mattpocock/skills) @ `b843cb5` and [obra/superpowers](https://github.com/obra/superpowers).
 
-*Skills authored from scratch will go here once written.*
-
-### External skills
-
-- **`grill-me`** — Get relentlessly interviewed about a plan or design until every branch of the decision tree is resolved. Copied from [mattpocock/skills](https://github.com/mattpocock/skills) @ `b843cb5`.
 
 ### Skill usage in practice
 
 - `grill-me`
-    - One-line behavioral prompt: "ask me hard questions one at a time, recommend an answer for each, until we've walked the whole decision tree."
-    - Example: `I want to migrate my previous correlator analysis from Jupyter notebooks to a script-based pipeline. The notebooks live in analysis/notebooks/. /grill-me`
+    - Example: `I want to migrate my previous analysis from Jupyter notebooks to a script-based pipeline. The notebooks live in analysis/notebooks/. /grill-me`
     - Key idea: force decisions to be surfaced before code is written.
-    - Practical tips:
-        - Explore the codebase first, then grill.
+    - Additional information:
         - Grill isn't one-shot. When you've been grilled and you're now coding, you'll hit a fork that wasn't covered. Re-invoke.
-        - Grill is also good for designing experiments, not just code. Example: "I want to test whether method A vs B affects the extracted mass. /grill-me."
+        - Grill is also good for designing experiments, not just code. Example: "I want to test whether method A vs B affects the outcome. /grill-me."
 
