@@ -1,4 +1,4 @@
-# My `AGENTS.md` and skills
+# Agent config
 
 My current `AGENTS.md` and collection of skills for coding agents.
 
