@@ -22,7 +22,7 @@ End when the decisions are resolved enough to start implementing, or when the us
 ## Principles
 
 - **One question at a time** — don't overwhelm with multiple questions.
-- **Multiple choice preferred** — easier to react to than open-ended when the option space can be enumerated.
+- **Multiple choice preferred** — easier to react to than open-ended when the option space can be enumerated. Prefer a structured multiple-choice prompt over prose when your harness provides one (e.g. Claude Code's `AskUserQuestion` tool).
 - **YAGNI ruthlessly** — remove unnecessary features from all designs and push back on speculative scope ("might also want", "could eventually need").
 - **Explore alternatives** — propose 2–3 approaches before settling, when real alternatives exist.
 - **Incremental validation** — present design pieces, get approval, then move on.
