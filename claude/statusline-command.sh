@@ -38,27 +38,36 @@ case "$cwd" in
   *)        short_cwd="$cwd" ;;
 esac
 
-BAR_WIDTH=7
+BAR_WIDTH=10
+# Partial-block bar: 8 sub-cell levels per char (Unicode eighth blocks cap here).
+# Total resolution is BAR_WIDTH * 8 distinct levels — here 80, ~1.25% per step.
+# eighths = how many 1/8-cells are filled; render full blocks, one partial block
+# for the remainder, then light-shade padding.
 make_bar() {
   pct="$1"
-  filled=$((pct * BAR_WIDTH / 100))
+  eighths=$((pct * BAR_WIDTH * 8 / 100))
+  full=$((eighths / 8))
+  rem=$((eighths % 8))
   i=0
   bar=""
-  while [ $i -lt $BAR_WIDTH ]; do
-    if [ $i -lt $filled ]; then
-      bar="${bar}━"
-    else
-      bar="${bar}╌"
-    fi
+  while [ $i -lt $full ]; do bar="${bar}█"; i=$((i + 1)); done
+  if [ $full -lt $BAR_WIDTH ] && [ $rem -ne 0 ]; then
+    case $rem in
+      1) bar="${bar}▏" ;; 2) bar="${bar}▎" ;; 3) bar="${bar}▍" ;;
+      4) bar="${bar}▌" ;; 5) bar="${bar}▋" ;; 6) bar="${bar}▊" ;; 7) bar="${bar}▉" ;;
+    esac
     i=$((i + 1))
-  done
+  fi
+  while [ $i -lt $BAR_WIDTH ]; do bar="${bar}░"; i=$((i + 1)); done
   printf "%s" "$bar"
 }
 
 # Bold/dim ANSI
 bold="\033[1m"
 dim="\033[2m"
+red="\033[31m"
 green="\033[32m"
+yellow="\033[33m"
 blue="\033[34m"
 cyan="\033[36m"
 reset="\033[0m"
@@ -99,10 +108,13 @@ add_segment() {
   [ -z "$pct" ] && return
   bar=$(make_bar "$pct")
   eta=$(fmt_eta "$reset_at")
+  if [ "$pct" -ge 80 ]; then col="$red"
+  elif [ "$pct" -ge 50 ]; then col="$yellow"
+  else col="$cyan"; fi
   if [ -n "$eta" ]; then
-    seg=$(printf "${dim}%s${reset} ${cyan}%s${reset} ${dim}%s%% ↻ %s${reset}" "$label" "$bar" "$pct" "$eta")
+    seg=$(printf "${dim}%s${reset} ${col}%s${reset} ${dim}%s%% ↻ %s${reset}" "$label" "$bar" "$pct" "$eta")
   else
-    seg=$(printf "${dim}%s${reset} ${cyan}%s${reset} ${dim}%s%%${reset}" "$label" "$bar" "$pct")
+    seg=$(printf "${dim}%s${reset} ${col}%s${reset} ${dim}%s%%${reset}" "$label" "$bar" "$pct")
   fi
   if [ -z "$line2" ]; then
     line2="$seg"
