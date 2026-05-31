@@ -41,3 +41,18 @@ My `AGENTS.md` is inspired by [forrestchang/andrej-karpathy-skills](https://gith
     - Key idea: force decisions to be surfaced before code is written.
     - Note: Grill isn't one-shot. When you've been grilled and you're now coding, you'll hit a fork that wasn't covered. Re-invoke.
 
+## Claude Code status line
+
+`claude/statusline-command.sh` is my [Claude Code status line](https://docs.claude.com/en/docs/claude-code/statusline): `user@host`, cwd, and model on line 1; context usage plus 5h/7d rate-limit bars and session count on line 2. POSIX `sh`; needs `jq` on `PATH`.
+
+Claude Code wires this up via `settings.json`, which I don't sync (it holds machine-specific permissions and env vars). So symlink the script, then point at it manually:
+
+```bash
+ln -s /path/to/claude/statusline-command.sh ~/.claude/statusline-command.sh
+```
+
+```json
+// merge into ~/.claude/settings.json
+{ "statusLine": { "type": "command", "command": "~/.claude/statusline-command.sh" } }
+```
+
