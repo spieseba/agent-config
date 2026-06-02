@@ -48,8 +48,8 @@ My `AGENTS.md` is inspired by [forrestchang/andrej-karpathy-skills](https://gith
 ## Claude Code status line
 
 `claude/statusline-command.sh` is my [Claude Code status line](https://docs.claude.com/en/docs/claude-code/statusline): 
-- `user@host`, cwd, and model on line 1
-- Context usage plus 5h/7d rate-limit bars and session count on line 2. 
+- Line 1: `user@host`, cwd, and model.
+- Line 2: Context usage plus 5h/7d rate-limit bars and session count.
 
 Requires `jq`. Claude Code wires this up via `settings.json`, which I don't sync. So symlink the script, then point at it manually:
 
