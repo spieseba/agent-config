@@ -15,6 +15,7 @@ host=$(hostname -s)
   IFS= read -r cwd
   IFS= read -r model
   IFS= read -r ctx_pct
+  IFS= read -r ctx_tokens
   IFS= read -r five_pct
   IFS= read -r five_reset
   IFS= read -r week_pct
@@ -25,6 +26,7 @@ $(printf '%s' "$input" | jq -r '
   .cwd // "",
   .model.display_name // "",
   pct(.context_window.used_percentage),
+  (.context_window.total_input_tokens // ""),
   pct(.rate_limits.five_hour.used_percentage),
   .rate_limits.five_hour.resets_at // "",
   pct(.rate_limits.seven_day.used_percentage),
@@ -99,12 +101,24 @@ fmt_eta() {
   fi
 }
 
+# Format a token count compactly: 90234 -> "90.2k", 512 -> "512". "" when absent.
+fmt_tokens() {
+  t="$1"
+  [ -z "$t" ] && return
+  if [ "$t" -ge 1000 ]; then
+    printf "%d.%dk" $((t / 1000)) $(((t % 1000) / 100))
+  else
+    printf "%d" "$t"
+  fi
+}
+
 line2=""
 sep="  ${dim}│${reset}  "
 add_segment() {
   label="$1"
   pct="$2"
   reset_at="$3"
+  extra="$4"
   [ -z "$pct" ] && return
   bar=$(make_bar "$pct")
   eta=$(fmt_eta "$reset_at")
@@ -116,6 +130,7 @@ add_segment() {
   else
     seg=$(printf "${dim}%s${reset} ${col}%s${reset} ${dim}%s%%${reset}" "$label" "$bar" "$pct")
   fi
+  [ -n "$extra" ] && seg="${seg}$(printf " ${dim}· %s${reset}" "$extra")"
   if [ -z "$line2" ]; then
     line2="$seg"
   else
@@ -123,7 +138,7 @@ add_segment() {
   fi
 }
 
-add_segment "ctx" "$ctx_pct"  ""
+add_segment "ctx" "$ctx_pct"  "" "$(fmt_tokens "$ctx_tokens")"
 add_segment "5h"  "$five_pct" "$five_reset"
 add_segment "7d"  "$week_pct" "$week_reset"
 
