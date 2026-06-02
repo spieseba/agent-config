@@ -42,11 +42,12 @@ My `AGENTS.md` is inspired by [forrestchang/andrej-karpathy-skills](https://gith
     - Note: Grill isn't one-shot. When you've been grilled and you're now coding, you'll hit a fork that wasn't covered. Re-invoke.
 
 - **`grill-with-docs`** — Grills your plan against the codebase's domain language, sharpening fuzzy terms and recording hard calls in `CONTEXT.md` and ADRs as you go.
-    - Key idea: build a *ubiquitous language* (from domain-driven design) shared by the code, the developers, and the domain experts who know the problem but not the implementation.
-    - Once all three share that language, an expert can point at the code and the developer knows exactly what's meant.
-    - Payoff: 
-        - You and the agent converge on the same vocabulary, so it takes far fewer words to say what you mean.
-        - Ambiguity surfaces early, while it's still cheap to resolve.
+    - Key idea: 
+        - Build a *ubiquitous language* (from domain-driven design) shared by the code, the developers, and the domain experts who know the problem but not the implementation.
+        - Once all three share that language, an expert can point at the code and the developer knows exactly what's meant.
+    - Benefits: 
+        - You and the agent converge on the same vocabulary, so it takes far fewer words (and tokens!) to communicate.
+        - Easier-to-navigate code as agreed on language is also reflected in the code.
 
 ## Claude Code status line
 
