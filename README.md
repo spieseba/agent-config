@@ -41,6 +41,10 @@ My `AGENTS.md` is inspired by [forrestchang/andrej-karpathy-skills](https://gith
     - Key idea: force decisions to be surfaced before code is written.
     - Note: Grill isn't one-shot. When you've been grilled and you're now coding, you'll hit a fork that wasn't covered. Re-invoke.
 
+- **`grill-with-docs`** — Grills your plan against the codebase's domain language, sharpening fuzzy terms and recording hard calls in `CONTEXT.md` and ADRs as you go.
+    - Key idea: build a *ubiquitous language* (from domain-driven design) shared by the code, the developers, and the domain experts who know the problem but not the implementation.
+    - Payoff: when all three share that language, an expert can point at the code and the developer knows exactly what's meant — and fuzzy terms surface early.
+
 ## Claude Code status line
 
 `claude/statusline-command.sh` is my [Claude Code status line](https://docs.claude.com/en/docs/claude-code/statusline): `user@host`, cwd, and model on line 1; context usage plus 5h/7d rate-limit bars and session count on line 2. POSIX `sh`; needs `jq` on `PATH`.
@@ -53,6 +57,6 @@ ln -s /path/to/claude/statusline-command.sh ~/.claude/statusline-command.sh
 
 ```json
 // merge into ~/.claude/settings.json
-{ "statusLine": { "type": "command", "command": "~/.claude/statusline-command.sh" } }
+"statusLine": { "type": "command", "command": "~/.claude/statusline-command.sh" }
 ```
 
