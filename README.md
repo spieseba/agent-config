@@ -49,6 +49,8 @@ My `AGENTS.md` is inspired by [forrestchang/andrej-karpathy-skills](https://gith
         - You and the agent converge on the same vocabulary, so it takes far fewer words (and tokens!) to communicate.
         - Easier-to-navigate code as agreed on language is also reflected in the code.
 
+- **`handoff`** — Compact the current conversation into a handoff document for another agent.
+
 ## Claude Code status line
 
 `claude/statusline-command.sh` is my [Claude Code status line](https://docs.claude.com/en/docs/claude-code/statusline): 
