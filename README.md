@@ -43,7 +43,10 @@ My `AGENTS.md` is inspired by [forrestchang/andrej-karpathy-skills](https://gith
 
 - **`grill-with-docs`** — Grills your plan against the codebase's domain language, sharpening fuzzy terms and recording hard calls in `CONTEXT.md` and ADRs as you go.
     - Key idea: build a *ubiquitous language* (from domain-driven design) shared by the code, the developers, and the domain experts who know the problem but not the implementation.
-    - Payoff: when all three share that language, an expert can point at the code and the developer knows exactly what's meant — and fuzzy terms surface early.
+    - Once all three share that language, an expert can point at the code and the developer knows exactly what's meant.
+    - Payoff: 
+        - You and the agent converge on the same vocabulary, so it takes far fewer words to say what you mean.
+        - Ambiguity surfaces early, while it's still cheap to resolve.
 
 ## Claude Code status line
 
