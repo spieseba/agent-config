@@ -1,8 +1,6 @@
 # AGENTS.md
 
-Behavioral guidelines to reduce common coding-agent mistakes. Merge with project-specific instructions as needed.
-
-**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
+**Tradeoff:** The following guidelines bias toward caution over speed. For trivial tasks, use judgment.
 
 ## 1. Think Before Coding
 
@@ -51,6 +49,8 @@ Transform tasks into verifiable goals:
 - "Fix the bug" → "Write a test that reproduces it, then make it pass"
 - "Refactor X" → "Ensure tests pass before and after"
 
+Where unit tests don't fit (numerical, research, exploratory code), verify by the appropriate check: comparison to a known limit or analytic result, convergence, or a numerical sanity check.
+
 For multi-step tasks, state a brief plan:
 ```
 1. [Step] → verify: [check]
@@ -62,4 +62,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 ---
 
-**These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
+## Communication
+When reporting information to me, be extremely concise and sacrifice grammar for the sake of concision.
+
+Concision never overrides §1: surface assumptions, tradeoffs, and unresolved questions in full.
