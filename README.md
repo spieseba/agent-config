@@ -51,6 +51,8 @@ My `AGENTS.md` is inspired by [forrestchang/andrej-karpathy-skills](https://gith
 
 - **`handoff`** — Compact the current conversation into a handoff document for another agent.
 
+- **`teach`** — Teaches you a new skill/concept over multiple sessions, using the cwd as a stateful teaching workspace.
+
 ## Claude Code status line
 
 `claude/statusline-command.sh` is my [Claude Code status line](https://docs.claude.com/en/docs/claude-code/statusline): 

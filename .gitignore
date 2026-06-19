@@ -1,2 +1,5 @@
 # This repo intentionally tracks claude/; override the global ~/.config/git/ignore rule.
 !claude/
+
+# Ignore skills shipped with codex
+skills/.system/
