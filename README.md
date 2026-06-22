@@ -33,7 +33,8 @@ ln -s /path/to/skills ~/.vibe/skills
 ## `AGENTS.md`
 
 My `AGENTS.md` is adapted from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) @ `2c60614`, itself derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on coding-agent pitfalls. The original materializes four principles — *Think Before Coding*, *Simplicity First*, *Surgical Changes*, *Goal-Driven Execution*. 
-My version merges the middle two into a single *Right-Sized Changes* section and adds rules that force the agent to surface its choices: stated tradeoffs before non-trivial work, flagged corner-cuts, an explicit list of what it did *not* do, and unprompted suggestions for better approaches.
+
+This version merges the middle two into a single *Right-Sized Changes* section and adds rules that force the agent to surface its choices: stated tradeoffs before non-trivial work, flagged corner-cuts, an explicit list of what it did *not* do, and unprompted suggestions for better approaches.
 
 ## Skills
 
