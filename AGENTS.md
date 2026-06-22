@@ -11,36 +11,23 @@ Before implementing:
 - If multiple interpretations exist, present them - don't pick silently.
 - If a simpler approach exists, say so. Push back when warranted.
 - If something is unclear, stop. Name what's confusing. Ask.
+- For non-trivial changes, state the approach in ~2 lines first, and name what it makes harder or forecloses later.
 
-## 2. Simplicity First
+## 2. Right-Sized Changes
 
-**Minimum code that solves the problem. Nothing speculative.**
+**Minimum code that solves the actual problem — no less (don't cut corners), no more (don't gold-plate). Touch only what you must.**
 
-- No features beyond what was asked.
-- No abstractions for single-use code.
-- No "flexibility" or "configurability" that wasn't requested.
-- No error handling for impossible scenarios.
-- If you write 200 lines and it could be 50, rewrite it.
+- Build nothing speculative: no unrequested features, abstractions, flexibility, or error handling for impossible cases. 
+- Simplicity first: If you write 200 lines and it could be 50, rewrite it.
+- If the minimal path sacrifices correctness or robustness, that's a decision — flag it, don't take it silently.
+- Match existing style. Improve adjacent code only as a separate, flagged change — never folded silently into the requested diff.
+- Clean up orphans your change creates; flag pre-existing dead code, don't delete it.
 
-Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+The tests: 
+- Every changed line should trace directly to the user's request.
+- Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
 
-## 3. Surgical Changes
-
-**Touch only what you must. Clean up only your own mess.**
-
-When editing existing code:
-- Don't "improve" adjacent code, comments, or formatting.
-- Don't refactor things that aren't broken.
-- Match existing style, even if you'd do it differently.
-- If you notice unrelated dead code, mention it - don't delete it.
-
-When your changes create orphans:
-- Remove imports/variables/functions that YOUR changes made unused.
-- Don't remove pre-existing dead code unless asked.
-
-The test: Every changed line should trace directly to the user's request.
-
-## 4. Goal-Driven Execution
+## 3. Goal-Driven Execution
 
 **Define success criteria. Loop until verified.**
 
@@ -63,6 +50,6 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 ---
 
 ## Communication
-When reporting information to me, be extremely concise and sacrifice grammar for the sake of concision.
-
-Concision never overrides §1: surface assumptions, tradeoffs, and unresolved questions in full.
+- When reporting information to the user, be extremely concise, sacrifice grammar for concision. This never overrides §1: surface assumptions, tradeoffs, and open questions in full.
+- End each task by stating what you did NOT do: corners cut, work deferred, things skipped.
+- If you see a better way — especially a structural fix with lasting payoff over a quick tactical patch — say so without being asked.
