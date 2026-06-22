@@ -38,7 +38,7 @@ This version merges the middle two into a single *Right-Sized Changes* section a
 
 ## Skills
 
-- **`delegate-to-vibe` — Delegate a task to the Mistral Vibe CLI for an independent, read-only crosscheck or a full-access implementation handoff.
+- **`delegate-to-vibe`** — Delegate a task to the Mistral Vibe CLI for an independent, read-only crosscheck or a full-access implementation handoff.
 
 - **`grill-me`** — Get extensively interviewed about a plan or design until every branch of the decision tree is resolved.
     - This skill is inspired by [mattpocock/skills](https://github.com/mattpocock/skills) and [obra/superpowers](https://github.com/obra/superpowers).
