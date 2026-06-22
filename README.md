@@ -36,6 +36,8 @@ My `AGENTS.md` is inspired by [forrestchang/andrej-karpathy-skills](https://gith
 
 ## Skills
 
+- **`delegate-to-vibe` — Delegate a task to the Mistral Vibe CLI for an independent, read-only crosscheck or a full-access implementation handoff.
+
 - **`grill-me`** — Get extensively interviewed about a plan or design until every branch of the decision tree is resolved.
     - This skill is inspired by [mattpocock/skills](https://github.com/mattpocock/skills) and [obra/superpowers](https://github.com/obra/superpowers).
     - Key idea: force decisions to be surfaced before code is written.
@@ -52,6 +54,7 @@ My `AGENTS.md` is inspired by [forrestchang/andrej-karpathy-skills](https://gith
 - **`handoff`** — Compact the current conversation into a handoff document for another agent.
 
 - **`teach`** — Teaches you a new skill/concept over multiple sessions, using the cwd as a stateful teaching workspace.
+
 
 ## Claude Code status line
 
