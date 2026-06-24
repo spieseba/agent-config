@@ -19,7 +19,7 @@ Before implementing:
 
 - Build nothing speculative: no unrequested features, abstractions, flexibility, or error handling for impossible cases. 
 - Simplicity first: If you write 200 lines and it could be 50, rewrite it.
-- If the minimal path sacrifices correctness or robustness, that's a decision — flag it, don't take it silently.
+- If the minimal approach sacrifices correctness or robustness, that's a decision — flag it, don't take it silently.
 - Match existing style. Improve adjacent code only as a separate, flagged change — never folded silently into the requested diff.
 - Clean up orphans your change creates; flag pre-existing dead code, don't delete it.
 
