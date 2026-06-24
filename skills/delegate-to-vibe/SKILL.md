@@ -4,8 +4,7 @@ description: >-
   Delegate a task to the Mistral Vibe CLI — a coding agent on a different model
   family — for an independent review or to hand off implementation work. On
   invocation the skill asks whether Vibe should run read-only (plan) or with
-  full access (auto-approve). Call-only.
-disable-model-invocation: true
+  full access (auto-approve).
 user-invocable: true
 argument-hint: "[plan | auto-approve] <task>"
 ---
@@ -26,14 +25,26 @@ If the user named a mode, use it; otherwise ask and wait. The mode is the
   delegate implementation, or for a review that must run code.
 
 ## Invoke
-Run from the relevant working directory; only `--agent` changes between modes:
+Run from the relevant working directory; only `--agent` changes between modes.
+`--output streaming` emits NDJSON (one object per message) for a live play-by-play;
+run it in the background to follow along. `PYTHONUNBUFFERED=1` is required — without
+it `vibe` block-buffers a redirected stdout and the file stays empty until the end:
 
 ```bash
-vibe --prompt "<explicit, self-contained task>" \
-  --agent <plan|auto-approve> --output text --max-turns 25 --trust
+PYTHONUNBUFFERED=1 vibe --prompt "<explicit, self-contained task>" \
+  --agent <plan|auto-approve> --output streaming --max-turns 25 --trust
 ```
 
 `--max-turns` is only a loop circuit-breaker; raise it if a run is truncated.
+
+## Follow the run — do not fire-and-forget
+- Tell the user the output-file path up front so they can tail it.
+- Follow the stream as it grows; surface meaningful progress (tools called, files
+  read, intermediate conclusions), not just the final answer. Translate the NDJSON
+  into readable progress — don't paste raw JSON. Line 1 is a large system-prompt
+  object; skip it.
+- Final answer = last `assistant` line with non-empty `content` and no `tool_calls`.
+- When vibe finishes, report the result and reconcile it with your own view.
 
 ## Prompting Vibe
 Vibe shares none of the calling agent's context and may be the less capable
@@ -52,8 +63,8 @@ a time. After each, check `git diff` against the criteria before the next; if
 Vibe wanders, revert and retry with a tighter, smaller step.
 
 ## Notes
-- Capture stdout; for large output, redirect to a temp file and read back only
-  the final answer.
+- Capture stdout to a temp file so it can be followed live and read back in full
+  after the run (needs `PYTHONUNBUFFERED=1` — see Invoke).
 - `plan` is the only enforceable read-only guarantee — `auto-approve` can write
   through the shell regardless of tools. For "run but provably cannot write,"
   point `auto-approve` at a git worktree or read-only copy.
