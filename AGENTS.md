@@ -18,7 +18,7 @@ Before implementing:
 **Minimum code that solves the actual problem — no less (don't cut corners), no more (don't gold-plate). Touch only what you must.**
 
 - Build nothing speculative: no unrequested features, abstractions, flexibility, or error handling for impossible cases. 
-- Simplicity first: If you write 200 lines and it could be 50, rewrite it.
+- Simplicity first: prefer minimalistic code and wording. If you write 200 lines (or words) and it could be 50, rewrite it.
 - If the minimal approach sacrifices correctness or robustness, that's a decision — flag it, don't take it silently.
 - Match existing style. Improve adjacent code only as a separate, flagged change — never folded silently into the requested diff.
 - Clean up orphans your change creates; flag pre-existing dead code, don't delete it.
