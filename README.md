@@ -38,8 +38,6 @@ This version merges the middle two into a single *Right-Sized Changes* section a
 
 ## Skills
 
-- **`delegate-to-vibe`** — Delegate a task to the Mistral Vibe CLI for an independent, read-only crosscheck or a full-access implementation handoff.
-
 - **`grill-me`** — Get extensively interviewed about a plan or design until every branch of the decision tree is resolved.
     - This skill is inspired by [mattpocock/skills](https://github.com/mattpocock/skills) and [obra/superpowers](https://github.com/obra/superpowers).
     - Key idea: force decisions to be surfaced before code is written.
@@ -54,6 +52,8 @@ This version merges the middle two into a single *Right-Sized Changes* section a
         - Easier-to-navigate code as agreed on language is also reflected in the code.
 
 - **`handoff`** — Compact the current conversation into a handoff document for another agent.
+
+- **`hand-to-vibe`** — Hand a task to the Mistral Vibe CLI for an independent, read-only crosscheck or a full-access implementation handoff.
 
 - **`teach`** — Teaches you a new skill/concept over multiple sessions, using the cwd as a stateful teaching workspace.
 

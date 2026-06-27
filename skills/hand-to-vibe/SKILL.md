@@ -1,7 +1,7 @@
 ---
-name: delegate-to-vibe
+name: hand-to-vibe
 description: >-
-  Delegate a task to the Mistral Vibe CLI — a coding agent on a different model
+  Hand a task to the Mistral Vibe CLI — a coding agent on a different model
   family — for an independent review or to hand off implementation work. On
   invocation the skill asks whether Vibe should run read-only (plan) or with
   full access (auto-approve).
