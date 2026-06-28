@@ -73,21 +73,3 @@ Requires `jq`. `claude/settings.json` wires this up by pointing Claude Code at t
 
 `codex/config.toml` configures the Codex TUI status line with model, cwd, reasoning, approval mode, context usage, rate-limit, and context-window segments.
 
-## Codex plugin for Claude Code
-
-[`codex-plugin-cc`](https://github.com/openai/codex-plugin-cc) lets Claude Code
-hand work off to the Codex CLI. To install it from inside a Claude Code session:
-```
-/plugin marketplace add openai/codex-plugin-cc
-/plugin install codex@openai-codex
-/reload-plugins
-/codex:setup
-```
-
-To install it non-interactively (e.g. in a Dockerfile), use the CLI equivalent:
-
-```bash
-claude plugin marketplace add openai/codex-plugin-cc
-claude plugin install codex@openai-codex
-```
-
