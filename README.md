@@ -16,10 +16,13 @@ git clone https://github.com/spieseba/agent-config.git
 # Claude Code
 ln -s /path/to/AGENTS.md ~/.claude/CLAUDE.md
 ln -s /path/to/skills ~/.claude/skills
+ln -s /path/to/claude/settings.json ~/.claude/settings.json
+ln -s /path/to/claude/statusline-command.sh ~/.claude/statusline-command.sh
 
 # Codex
 ln -s /path/to/AGENTS.md ~/.codex/AGENTS.md
 ln -s /path/to/skills ~/.codex/skills
+ln -s /path/to/codex/config.toml ~/.codex/config.toml
 
 # Antigravity CLI
 ln -s /path/to/AGENTS.md ~/.gemini/GEMINI.md
@@ -64,14 +67,9 @@ This version merges the middle two into a single *Right-Sized Changes* section a
 - Line 1: `user@host`, cwd, and model.
 - Line 2: Context usage plus 5h/7d rate-limit bars and session count.
 
-Requires `jq`. Claude Code wires this up via `settings.json`, which I don't sync. So symlink the script, then point at it manually:
+Requires `jq`. `claude/settings.json` wires this up by pointing Claude Code at the synced statusline script.
 
-```bash
-ln -s /path/to/claude/statusline-command.sh ~/.claude/statusline-command.sh
-```
+## Codex status line
 
-```json
-// merge into ~/.claude/settings.json
-"statusLine": { "type": "command", "command": "~/.claude/statusline-command.sh" }
-```
+`codex/config.toml` configures the Codex TUI status line with model, cwd, reasoning, approval mode, context usage, rate-limit, and context-window segments.
 
