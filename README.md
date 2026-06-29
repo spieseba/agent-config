@@ -61,7 +61,7 @@ This version merges the middle two into a single *Right-Sized Changes* section a
 - **`teach`** — Teaches you a new skill/concept over multiple sessions, using the cwd as a stateful teaching workspace.
 
 
-## Claude Code status line
+## Claude Settings
 
 `claude/statusline-command.sh` is my [Claude Code status line](https://docs.claude.com/en/docs/claude-code/statusline): 
 - Line 1: `user@host`, cwd, and model.
@@ -69,7 +69,9 @@ This version merges the middle two into a single *Right-Sized Changes* section a
 
 Requires `jq`. `claude/settings.json` wires this up by pointing Claude Code at the synced statusline script.
 
-## Codex status line
+## Codex Configuration
 
-`codex/config.toml` configures the Codex TUI status line with model, cwd, reasoning, approval mode, context usage, rate-limit, and context-window segments.
+`codex/config.toml`:
+- Configures `sandbox_mode = "danger-full-access"` to run codex without sandbox restrictions because I run agents in a [sandbox](https://github.com/spieseba/docker-sandbox).
+- Codex TUI status line is configured with model, cwd, reasoning, approval mode, context usage, rate-limit, and context-window segments.
 

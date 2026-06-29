@@ -1,3 +1,5 @@
+sandbox_mode = "danger-full-access"
+
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "model", "reasoning", "approval-mode", "context-used", "five-hour-limit", "weekly-limit", "context-window-size"]
 status_line_use_colors = true
