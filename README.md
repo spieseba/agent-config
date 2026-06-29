@@ -63,15 +63,16 @@ This version merges the middle two into a single *Right-Sized Changes* section a
 
 ## Claude Settings
 
-`claude/statusline-command.sh` is my [Claude Code status line](https://docs.claude.com/en/docs/claude-code/statusline): 
-- Line 1: `user@host`, cwd, and model.
-- Line 2: Context usage plus 5h/7d rate-limit bars and session count.
+`claude/settings.json` configures Claude Code to use `claude/statusline-command.sh` as the status line.
 
-Requires `jq`. `claude/settings.json` wires this up by pointing Claude Code at the synced statusline script.
+`claude/statusline-command.sh` shows:
+- `user@host`, current directory, and model.
+- Context usage, 5h/7d rate-limit bars, and session count.
+
+Requires `jq`.
 
 ## Codex Configuration
 
-`codex/config.toml`:
-- Configures `sandbox_mode = "danger-full-access"` to run codex without sandbox restrictions because I run agents in a [sandbox](https://github.com/spieseba/docker-sandbox).
-- Codex TUI status line is configured with model, cwd, reasoning, approval mode, context usage, rate-limit, and context-window segments.
-
+`codex/config.toml` is intentionally minimal:
+- `sandbox_mode = "danger-full-access"` disables Codex's built-in filesystem sandbox. I use this only because Codex itself runs inside my separate [Docker sandbox](https://github.com/spieseba/docker-sandbox).
+- `[tui]` customizes the Codex TUI status line: model/reasoning info, current directory, approval mode, context usage, rate limits, and context-window size.
