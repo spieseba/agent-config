@@ -19,18 +19,18 @@ ln -s /path/to/skills ~/.claude/skills
 ln -s /path/to/claude/settings.json ~/.claude/settings.json
 ln -s /path/to/claude/statusline-command.sh ~/.claude/statusline-command.sh
 
-# Codex
-ln -s /path/to/AGENTS.md ~/.codex/AGENTS.md
-ln -s /path/to/skills ~/.codex/skills
-ln -s /path/to/codex/config.toml ~/.codex/config.toml
+# Mistral Vibe CLI
+ln -s /path/to/AGENTS.md ~/.vibe/AGENTS.md
+ln -s /path/to/skills ~/.vibe/skills
 
 # Antigravity CLI
 ln -s /path/to/AGENTS.md ~/.gemini/GEMINI.md
 ln -s /path/to/skills ~/.gemini/skills
 
-# Mistral Vibe CLI
-ln -s /path/to/AGENTS.md ~/.vibe/AGENTS.md
-ln -s /path/to/skills ~/.vibe/skills
+# Codex
+ln -s /path/to/AGENTS.md ~/.codex/AGENTS.md
+ln -s /path/to/skills ~/.codex/skills
+
 ```
 
 ## `AGENTS.md`
@@ -70,9 +70,3 @@ This version merges the middle two into a single *Right-Sized Changes* section a
 - Context usage, 5h/7d rate-limit bars, and session count.
 
 Requires `jq`.
-
-## Codex Configuration
-
-`codex/config.toml` is intentionally minimal:
-- `sandbox_mode = "danger-full-access"` disables Codex's built-in filesystem sandbox. I use this only because Codex itself runs inside my separate [Docker sandbox](https://github.com/spieseba/docker-sandbox).
-- `[tui]` customizes the Codex TUI status line: model/reasoning info, current directory, approval mode, context usage, rate limits, and context-window size.
