@@ -70,3 +70,27 @@ This version merges the middle two into a single *Right-Sized Changes* section a
 - Context usage, 5h/7d rate-limit bars, and session count.
 
 Requires `jq`.
+
+
+## Mistral Vibe model
+
+To pin a custom model in vibe (e.g. `glm-5-2`), add a `[[models]]` block to `~/.vibe/config.toml`. 
+Then set `active_model = "glm-5-2"` at the top of the file  (or select it via `/model`).
+
+```toml
+[[models]]
+name = "zai-glm-5-2"
+provider = "mistral"
+alias = "glm-5-2"
+temperature = 1.0
+input_price = 1.19
+output_price = 3.74
+cached_input_price = 0.22
+thinking = "max"
+supports_images = false
+auto_compact_threshold = 200000
+```
+
+> **Note:** `config.toml` is created on first saved setting and is rewritten
+> when you change settings via `/config`. If Vibe regenerates the file,
+> re-insert the block as above. Logins and config do not survive a rebuild.
