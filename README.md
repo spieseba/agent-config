@@ -22,6 +22,7 @@ ln -s /path/to/claude/statusline-command.sh ~/.claude/statusline-command.sh
 # Mistral Vibe CLI
 ln -s /path/to/AGENTS.md ~/.vibe/AGENTS.md
 ln -s /path/to/skills ~/.vibe/skills
+cp /path/to/vibe/config.toml ~/.vibe/config.toml
 
 # Antigravity CLI
 ln -s /path/to/AGENTS.md ~/.gemini/GEMINI.md
@@ -85,25 +86,7 @@ See the official [Codex sandbox documentation](https://learn.chatgpt.com/codex/s
 for the sandbox modes and Linux prerequisites.
 
 
-## Mistral Vibe model
+## Mistral Vibe config
 
-To pin a custom model in vibe (e.g. `glm-5-2`), add a `[[models]]` block to `~/.vibe/config.toml`. 
-Then set `active_model = "glm-5-2"` at the top of the file  (or select it via `/model`).
-
-```toml
-[[models]]
-name = "zai-glm-5-2"
-provider = "mistral"
-alias = "glm-5-2"
-temperature = 1.0
-input_price = 1.19
-output_price = 3.74
-cached_input_price = 0.22
-thinking = "max"
-supports_images = false
-auto_compact_threshold = 200000
-```
-
-> **Note:** `config.toml` is created on first saved setting and is rewritten
-> when you change settings via `/config`. If Vibe regenerates the file,
-> re-insert the block as above. Logins and config do not survive a rebuild.
+`vibe/config.toml` selects `glm-5-2` and Vibe's built-in `auto-approve` agent by default.
+Copying it replaces existing Vibe preferences; Vibe may rewrite it when settings change via `/config`.
