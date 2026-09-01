@@ -16,7 +16,7 @@ git clone https://github.com/spieseba/agent-config.git
 # Claude Code
 ln -s /path/to/AGENTS.md ~/.claude/CLAUDE.md
 ln -s /path/to/skills ~/.claude/skills
-ln -s /path/to/claude/settings.json ~/.claude/settings.json
+cp /path/to/claude/settings.json ~/.claude/settings.json
 ln -s /path/to/claude/statusline-command.sh ~/.claude/statusline-command.sh
 
 # Mistral Vibe CLI
@@ -30,6 +30,7 @@ ln -s /path/to/skills ~/.gemini/skills
 # Codex
 ln -s /path/to/AGENTS.md ~/.codex/AGENTS.md
 ln -s /path/to/skills ~/.codex/skills
+cp /path/to/codex/config.toml ~/.codex/config.toml
 
 ```
 
@@ -70,6 +71,18 @@ This version merges the middle two into a single *Right-Sized Changes* section a
 - Context usage, 5h/7d rate-limit bars, and session count.
 
 Requires `jq`.
+
+
+## Codex config
+
+`codex/config.toml` is intended for running Codex inside a Docker container. It:
+
+- Sets `sandbox_mode = "danger-full-access"` Codex’s own documentation explicitly recommends this for containerized environments where the required Linux sandbox features aren’t available.
+- Sets `approvals_reviewer = "auto_review"`.
+- TUI status line with model, directory, approval, context, token, and rate-limit details.
+
+See the official [Codex sandbox documentation](https://learn.chatgpt.com/codex/sandboxing)
+for the sandbox modes and Linux prerequisites.
 
 
 ## Mistral Vibe model

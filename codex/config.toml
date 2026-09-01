@@ -1,0 +1,6 @@
+sandbox_mode = "danger-full-access"
+approvals_reviewer = "auto_review"
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "approval-mode", "context-used", "used-tokens", "five-hour-limit", "weekly-limit"]
+status_line_use_colors = true
