@@ -32,6 +32,7 @@ ln -s /path/to/skills ~/.gemini/skills
 ln -s /path/to/AGENTS.md ~/.codex/AGENTS.md
 ln -s /path/to/skills ~/.codex/skills
 cp /path/to/codex/config.toml ~/.codex/config.toml
+cp -r /path/to/codex/pets ~/.codex/
 
 ```
 
@@ -57,8 +58,6 @@ This version merges the middle two into a single *Right-Sized Changes* section a
         - Easier-to-navigate code as agreed on language is also reflected in the code.
 
 - **`handoff`** — Compact the current conversation into a handoff document for another agent.
-
-- **`hand-to-vibe`** — Hand a task to the Mistral Vibe CLI for an independent, read-only crosscheck or a full-access implementation handoff.
 
 - **`teach`** — Teaches you a new skill/concept over multiple sessions, using the cwd as a stateful teaching workspace.
 
