@@ -32,7 +32,7 @@ ln -s /path/to/skills ~/.gemini/skills
 ln -s /path/to/AGENTS.md ~/.codex/AGENTS.md
 ln -s /path/to/skills ~/.codex/skills
 cp /path/to/codex/config.toml ~/.codex/config.toml
-cp -r /path/to/codex/pets ~/.codex/
+ln -s /path/to/codex/pets ~/.codex/pets
 
 ```
 
