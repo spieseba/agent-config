@@ -1,3 +1,16 @@
 enable_telemetry = false
 active_model = "glm-5-2"
 default_agent = "auto-approve"
+
+[[models]]
+name = "zai-glm-5-2"
+provider = "mistral"
+alias = "glm-5-2"
+display_name = "GLM-5.2 (Mistral Hosted)"
+temperature = 1.0
+thinking = "high"
+supports_images = false
+auto_compact_threshold = 800000
+input_price = 1.4
+output_price = 4.4
+cached_input_price = 0.14
