@@ -44,34 +44,29 @@ This version merges the middle two into a single *Right-Sized Changes* section a
 
 ## Skills
 
-- **`grill-me`** — Get extensively interviewed about a plan or design until every branch of the decision tree is resolved.
-    - This skill is inspired by [mattpocock/skills](https://github.com/mattpocock/skills) and [obra/superpowers](https://github.com/obra/superpowers).
-    - Key idea: force decisions to be surfaced before code is written.
-    - Note: Grill isn't one-shot. When you've been grilled and you're now coding, you'll hit a fork that wasn't covered. Re-invoke.
+- **`grill-me`**: Get extensively interviewed about a plan or design until every branch of the decision tree is resolved.
+  - This skill is inspired by [mattpocock/skills](https://github.com/mattpocock/skills) and [obra/superpowers](https://github.com/obra/superpowers).
+  - Key idea: force decisions to be surfaced before code is written.
+- **`grill-with-docs`**: Grills your plan against the codebase's domain language, sharpening fuzzy terms and recording hard calls in `CONTEXT.md` and ADRs as you go.
+  - Key idea:
+    - Extension of `grill-me`: build *ubiquitous language* (from domain-driven design) shared by the code, the developers, and the domain experts who know the problem but not the implementation.
+    - Once all three share that language, an expert can point at the code and the developer knows exactly what's meant.
+- **`handoff`**: Compact the current conversation into a handoff document for another agent.
 
-- **`grill-with-docs`** — Grills your plan against the codebase's domain language, sharpening fuzzy terms and recording hard calls in `CONTEXT.md` and ADRs as you go.
-    - Key idea: 
-        - Build a *ubiquitous language* (from domain-driven design) shared by the code, the developers, and the domain experts who know the problem but not the implementation.
-        - Once all three share that language, an expert can point at the code and the developer knows exactly what's meant.
-    - Benefits: 
-        - You and the agent converge on the same vocabulary, so it takes far fewer words (and tokens!) to communicate.
-        - Easier-to-navigate code as agreed on language is also reflected in the code.
+- **`teach`**: Teaches you a new skill/concept over multiple sessions, using the cwd as a stateful teaching workspace.
 
-- **`handoff`** — Compact the current conversation into a handoff document for another agent.
-
-- **`teach`** — Teaches you a new skill/concept over multiple sessions, using the cwd as a stateful teaching workspace.
-
+- **`ponytail`**: Lazy senior dev mode. Copied verbatim from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail).
 
 ## Claude Settings
 
 `claude/settings.json` configures Claude Code to use `claude/statusline-command.sh` as the status line.
 
 `claude/statusline-command.sh` shows:
+
 - `user@host`, current directory, and model.
 - Context usage, 5h/7d rate-limit bars, and session count.
 
 Requires `jq`.
-
 
 ## Codex config
 
@@ -83,7 +78,6 @@ Requires `jq`.
 
 See the official [Codex sandbox documentation](https://learn.chatgpt.com/codex/sandboxing)
 for the sandbox modes and Linux prerequisites.
-
 
 ## Mistral Vibe config
 
