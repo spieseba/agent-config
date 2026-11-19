@@ -8,33 +8,20 @@ Collaboration-first, not autonomy-first. The goal is to amplify my thinking, not
 
 ## Install
 
-Clone the repo, then symlink (or copy) into the coding agent's config directory:
+Clone the repo and run `install.sh` for the coding agents you use:
 
 ```bash
 git clone https://github.com/spieseba/agent-config.git
+cd agent-config
 
-# Antigravity CLI
-ln -s /path/to/AGENTS.md ~/.gemini/GEMINI.md
-ln -s /path/to/skills ~/.gemini/skills
-cp /path/to/antigravity/settings.json ~/.gemini/antigravity-cli/settings.json
-ln -s /path/to/antigravity/statusline.sh ~/.gemini/antigravity-cli/statusline.sh
+# Install for all supported agents
+./install.sh --all
 
-# Claude Code
-ln -s /path/to/AGENTS.md ~/.claude/CLAUDE.md
-ln -s /path/to/skills ~/.claude/skills
-cp /path/to/claude/settings.json ~/.claude/settings.json
-ln -s /path/to/claude/statusline-command.sh ~/.claude/statusline-command.sh
-
-# Codex
-ln -s /path/to/AGENTS.md ~/.codex/AGENTS.md
-ln -s /path/to/skills ~/.codex/skills
-cp /path/to/codex/config.toml ~/.codex/config.toml
-
-# Mistral Vibe CLI
-ln -s /path/to/AGENTS.md ~/.vibe/AGENTS.md
-ln -s /path/to/skills ~/.vibe/skills
-cp /path/to/vibe/config.toml ~/.vibe/config.toml
+# Or pick specific agents
+./install.sh --antigravity --claude --codex --vibe
 ```
+
+`install.sh` symlinks `AGENTS.md`, `skills/`, and statusline scripts, and copies mutable config files (`settings.json`, `config.toml`) — overwriting any existing ones. Run `./install.sh --help` for options.
 
 ## `AGENTS.md`
 
