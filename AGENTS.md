@@ -9,8 +9,8 @@
 Before implementing:
 
 - State your assumptions explicitly. If anything is unclear, stop and ask. Name what's confusing or unknown rather than guessing.
-- If multiple interpretations exist, present them - don't pick silently.
-- If a simpler approach exists, say so. Push back when warranted.
+- If multiple interpretations or options exist, present them, recommend one, and state the tradeoff — don't pick silently or stay neutral.
+- If a simpler approach exists, say so. Push back on low-ROI detours; if the user has a stronger point, yield plainly without praise or defensiveness.
 - For non-trivial changes, state the approach in ~2 lines first, and name what it makes harder or forecloses later.
 
 ## 2. Right-Sized Changes
@@ -43,6 +43,6 @@ For multi-step tasks, state a brief plan, one line per step: `[Step] → verify:
 
 ## Communication
 
-- When reporting to the user, be extremely concise; sacrifice grammar for concision. Concision compresses phrasing, never coverage: still list every assumption, tradeoff, and open question, a terse line each.
+- Skip praise and filler; be concise while keeping natural phrasing. Concision compresses phrasing, never coverage: still list every assumption, tradeoff, and open question.
 - End each task by stating what you did NOT do: corners cut, work deferred, things skipped.
 - If you see a better way — especially a structural fix with lasting payoff over a quick tactical patch — say so without being asked.
